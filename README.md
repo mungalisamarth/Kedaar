@@ -10,11 +10,34 @@ site/
 ├── index.html            # The whole site, one page, four sections
 ├── styles.css            # Playful cartoon theme + responsive layout
 ├── script.js             # Scroll-reveal animations & subtle parallax
+├── robots.txt            # SEO — points crawlers at the sitemap
+├── sitemap.xml           # SEO — single-URL sitemap
 ├── README.md
 └── assets/
     ├── favicon.svg
-    └── images/           # Optimized JPGs (~1.9 MB total)
+    └── images/           # Optimized JPGs + OG card (~1.9 MB total)
+        └── og-image.jpg  # 1200×630 social preview card
 ```
+
+## SEO & social sharing
+
+The site ships with:
+
+- **Open Graph** tags (`og:title`, `og:description`, `og:image` 1200×630, `og:locale en_CA`) so WhatsApp / Facebook / LinkedIn / Slack render a rich preview
+- **Twitter Card** (`summary_large_image`) for the same preview on Twitter/X
+- **JSON-LD structured data** with three linked nodes: `WebSite`, `Person` (Kedaar), and `Book` (From Aurora to Zamboni with offer link to Maple Beaver) — helps Google understand the site is an author bio for a published children's book
+- **Canonical URL**, `robots.txt`, and `sitemap.xml` for clean indexing
+- **Descriptive alt text** on every image
+
+After deploying, test the previews with:
+- WhatsApp: just share the URL in any chat
+- Facebook: https://developers.facebook.com/tools/debug/?q=https://kedaar.ca/
+- Twitter/X: https://cards-dev.twitter.com/validator
+- LinkedIn: https://www.linkedin.com/post-inspector/
+- Google Rich Results: https://search.google.com/test/rich-results?url=https://kedaar.ca/
+
+If WhatsApp still shows no preview after deploying, clear its cache by adding
+`?v=2` to the URL once — WhatsApp caches OG data aggressively.
 
 ## Sections
 
