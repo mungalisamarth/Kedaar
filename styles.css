@@ -131,13 +131,14 @@ a { color: inherit; }
 [data-bg="sunshine"] { background: radial-gradient(circle at 20% 10%, #ffe066 0%, #ffd166 30%, #ffba49 100%); }
 [data-bg="aurora"]   { background: linear-gradient(135deg, #1b2a4e 0%, #2b3674 35%, #0f8b8d 70%, #95d5b2 100%); color: #fff7ec; }
 [data-bg="mint"]     { background: linear-gradient(180deg, #e9f7ef 0%, #95d5b2 100%); }
+[data-bg="blossom"]  { background: linear-gradient(160deg, #fff0f6 0%, #ffd9ec 45%, #ffb8dc 100%); }
 
 /* Snap on desktop only */
 @media (min-width: 900px) {
   html, body { scroll-snap-type: y mandatory; }
   .section { scroll-snap-align: start; scroll-snap-stop: always; }
   /* allow free scroll within long sections by relaxing stop */
-  .section-about, .section-book, .section-program { scroll-snap-stop: normal; }
+  .section-about, .section-book, .section-next, .section-program { scroll-snap-stop: normal; }
 }
 
 /* ---------- Reveal animation ---------- */
@@ -627,6 +628,27 @@ a { color: inherit; }
 }
 
 /* ============================================================
+   NEXT BOOK (P.D. NAX)
+   ============================================================ */
+.section-next { padding-top: 110px; padding-bottom: 80px; min-height: auto; }
+.next-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
+  align-items: center;
+}
+.next-image { display: flex; justify-content: center; }
+.next-text .lede {
+  font-size: 22px;
+  line-height: 1.5;
+  color: var(--plum);
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+.next-text p { font-size: 17px; color: #3d3252; margin: 0 0 14px; }
+.next-text em { color: var(--berry); font-style: italic; }
+
+/* ============================================================
    FREE BOOK PROGRAM
    ============================================================ */
 .section-program { padding-top: 110px; padding-bottom: 80px; min-height: auto; }
@@ -779,6 +801,8 @@ a { color: inherit; }
 
   .program-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
   .program-ctas { justify-content: center; }
+
+  .next-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
 
   .photo-polaroid.big { width: 100%; max-width: 320px; }
   .funfacts-list { grid-template-columns: repeat(2, 1fr); }
