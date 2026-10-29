@@ -795,6 +795,7 @@ a { color: inherit; }
   .sticker-author { top: -4%; right: 0; }
   .sticker-made { bottom: -4%; left: 4%; }
   .scroll-cue { display: none; }
+  .star-3 { display: none; }
 
   .book-hero { grid-template-columns: 1fr; gap: 30px; text-align: center; }
   .big-quote { text-align: left; }
